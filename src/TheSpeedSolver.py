@@ -1,7 +1,5 @@
 class Cube:
-
     def __init__(self):
-        
         self.cubies = [
             ['W','R','B'],
             ['W','B','O'],
@@ -17,45 +15,46 @@ class Cube:
     # does a u twist to the cube
     def u(self):
         self.cubies[0], self.cubies[1], self.cubies[2], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[1], self.cubies[2]
-    
     #def up(self):
         #todo
-    # def ut():
-    #     #todo
-    
+    # def ut(self):
+        #todo
+
+    # does a clockwise turn to the bottom layer
     def d(self):
         self.cubies[4], self.cubies[5], self.cubies[6], self.cubies[7] = self.cubies[7], self.cubies[4], self.cubies[5], self.cubies[6]
-    # def dp():
+    # def dp(self):
+        #todo
+    # def dt(self):
+        #todo
+
+    # does a turn to the right hand side clockwise
+    def r(self):
+        self.cubies[1], self.cubies[5], self.cubies[6], self.cubies[2] = self.cubies[5], self.cubies[6], self.cubies[2], self.cubies[1]
+    # def rp(self):
     #     #todo
-    # def dt():
-    #     #todo
-    
-    # def r():
-    #     #todo
-    # def rp():
-    #     #todo
-    # def rt():
+    # def rt(self):
     
     # def l():
-    #     #todo
+        #todo
     # def lp():
-    #     #todo
+        #todo
     # def lt():
-    #     #todo
+        #todo
     
     # def f():
-    #     #todo
+        #todo
     # def fp():
-    #     #todo
+        #todo
     # def ft():
-    #     #todo
+        #todo
     
     # def b():
-    #     #todo
+        #todo
     # def bp():
-    #     #todo
+        #todo
     # def bt():
-    #     #todo
+        #todo
 
     def render(self):
         print(self.cubies)
@@ -63,14 +62,9 @@ class Cube:
 
 
 cube = Cube()
-print('step1: ', end = '')
+print('s: ', end = '')
 cube.render()
 
-cube.u()
-print('step2: ', end = '')
-cube.render()
-
-cube = Cube()
-cube.d()
-print('step3: ', end = '')
+cube.r()
+print('r: ', end = '')
 cube.render()
