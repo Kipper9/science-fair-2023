@@ -38,35 +38,34 @@ class Cube:
     # does a turn to the left hand side clockwise
     def l(self):
         self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[4], self.cubies[7]
-    # def lp():
-        #todo
-    # def lt():
+    def lp(self):
+        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[4], self.cubies[7], self.cubies[3], self.cubies[0]
+    # def lt(self8):
         #todo
     
     # does a clockwise turn to the front of the cube
     def f(self):
-        self.cubies[1], self.cubies[5], self.cubies[4], self.cubies[0] = self.cubies[0], self.cubies[1], self.cubies[5], self.cubies[4]
-
-    # def fp():
-        #todo
-    # def ft():
+        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[4], self.cubies[7]
+    def fp(self):
+        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[4], self.cubies[7], self.cubies[3], self.cubies[0]
+    # def ft(self):
         #todo
    
     # does a clockwise turn to the backside of the cube
     def b(self):
         self.cubies[3], self.cubies[7], self.cubies[6], self.cubies[2] = self.cubies[2], self.cubies[3], self.cubies[7], self.cubies[6]
-    # def bp():
-        #todo
-    # def bt():
+    def bp(self):
+        self.cubies[2], self.cubies[6], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[2], self.cubies[6], self.cubies[7]
+    # def bt(self):
         #todo
 
     def render(self):
         print(self.cubies)
 
 cube = Cube()
-print('s: ', end = '')
+print('test: ', end = '')
 cube.render()
 
-cube.dp()
-print('rp: ', end = '')
+cube.bp()
+print('test: ', end = '')
 cube.render()
