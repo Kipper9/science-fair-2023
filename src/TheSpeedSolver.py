@@ -12,33 +12,32 @@ class Cube:
             ['G','R','Y']
         ]
 
-    # does a u twist to the cube
+    # does a clockwise twist to top of the cube the cube
     def u(self):
+        self.cubies[0], self.cubies[2], self.cubies[2], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[1], self.cubies[2]
+    def up(self):
         self.cubies[0], self.cubies[1], self.cubies[2], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[1], self.cubies[2]
-    #def up(self):
-        #todo
     # def ut(self):
         #todo
 
     # does a clockwise turn to the bottom layer
     def d(self):
         self.cubies[4], self.cubies[5], self.cubies[6], self.cubies[7] = self.cubies[7], self.cubies[4], self.cubies[5], self.cubies[6]
-    # def dp(self):
-        #todo
+    def dp(self):
+        self.cubies[4], self.cubies[5], self.cubies[6], self.cubies[7] = self.cubies[5], self.cubies[6], self.cubies[7], self.cubies[4]
     # def dt(self):
         #todo
 
     # does a turn to the right hand side clockwise
     def r(self):
         self.cubies[1], self.cubies[5], self.cubies[6], self.cubies[2] = self.cubies[5], self.cubies[6], self.cubies[2], self.cubies[1]
-    # def rp(self):
-    #     #todo
+    def rp(self):
+        self.cubies[1], self.cubies[5], self.cubies[6], self.cubies[2] = self.cubies[2], self.cubies[1], self.cubies[5], self.cubies[6]
     # def rt(self):
     
     # does a turn to the left hand side clockwise
     def l(self):
         self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[4], self.cubies[7]
-
     # def lp():
         #todo
     # def lt():
@@ -52,6 +51,7 @@ class Cube:
         #todo
     # def ft():
         #todo
+   
     # does a clockwise turn to the backside of the cube
     def b(self):
         self.cubies[3], self.cubies[7], self.cubies[6], self.cubies[2] = self.cubies[2], self.cubies[3], self.cubies[7], self.cubies[6]
@@ -63,12 +63,10 @@ class Cube:
     def render(self):
         print(self.cubies)
 
-
-
 cube = Cube()
 print('s: ', end = '')
 cube.render()
 
-cube.b()
-print('b: ', end = '')
+cube.dp()
+print('rp: ', end = '')
 cube.render()
