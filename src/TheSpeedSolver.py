@@ -11,6 +11,7 @@ class Cube:
             ['O','G','Y'],
             ['G','R','Y']
         ]
+    # These are all the turning functions for a Rubik's cube
 
     # does a clockwise twist to top of the cube
     def u(self):
@@ -48,17 +49,19 @@ class Cube:
     # does a turn to the left hand side counterclockwise
     def lp(self):
         self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[4], self.cubies[7], self.cubies[3], self.cubies[0]
-    # def lt(self):
-        #todo
-    
+    # does a 180 turn to the left hand side of the cube
+    def lt(self):
+        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[7], self.cubies[3], self.cubies[0], self.cubies[4]
+
     # does a clockwise turn to the front of the cube
     def f(self):
-        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[4], self.cubies[7]
+        self.cubies[0], self.cubies[1], self.cubies[4], self.cubies[5] = self.cubies[4], self.cubies[0], self.cubies[5], self.cubies[1]
     # does a counterclockwise turn to the front of the cube
     def fp(self):
-        self.cubies[0], self.cubies[4], self.cubies[7], self.cubies[3] = self.cubies[4], self.cubies[7], self.cubies[3], self.cubies[0]
-    # def ft(self):
-        #todo
+        self.cubies[0], self.cubies[1], self.cubies[4], self.cubies[5] = self.cubies[1], self.cubies[5], self.cubies[0], self.cubies[4]
+    # does a 180 turn to the front side of the cube
+    def ft(self):
+        self.cubies[0], self.cubies[1], self.cubies[4], self.cubies[5] = self.cubies[5], self.cubies[4], self.cubies[1], self.cubies[0]
    
     # does a clockwise turn to the backside of the cube
     def b(self):
@@ -66,8 +69,9 @@ class Cube:
     # does a counterclockwise turn to the backside of the cube
     def bp(self):
         self.cubies[2], self.cubies[6], self.cubies[7], self.cubies[3] = self.cubies[3], self.cubies[2], self.cubies[6], self.cubies[7]
-    # def bt(self):
-        #todo
+    # does a 180 turn to the back side of the cube
+    def bt(self):
+        self.cubies[2], self.cubies[6], self.cubies[7], self.cubies[3] = self.cubies[7], self.cubies[3], self.cubies[2], self.cubies[6]
 
     def render(self):
         print(self.cubies)
@@ -76,6 +80,6 @@ cube = Cube()
 print('test: ', end = '')
 cube.render()
 
-cube.rt()
+cube.bt()
 print('test: ', end = '')
 cube.render()
