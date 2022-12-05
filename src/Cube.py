@@ -1,18 +1,17 @@
 class Cube:
     def __init__(self):
         self.cubies = [
-            ['W','R','B'],
-            ['W','B','O'],
-            ['W','O','G'],
-            ['W','G','R'],
-
-            ['R','B','Y'],
-            ['B','O','Y'],
-            ['O','G','Y'],
-            ['G','R','Y']
-        ]
+            ['W'],['W'],
+            ['W'],['W'],
+            ['R'],['R'],['B'],['B'],['O'],['O'],
+            ['R'],['R'],['B'],['B'],['O'],['O'],
+            ['Y'],['Y'],
+            ['Y'],['Y'],
+            ['G'],['G'],['G'],['G'],
+            ]
+    
     # These are all the turning functions for a Rubik's cube
-
+    
     # does a clockwise twist to top of the cube
     def u(self):
         self.cubies[0], self.cubies[2], self.cubies[2], self.cubies[3] = self.cubies[3], self.cubies[0], self.cubies[1], self.cubies[2]

@@ -4,7 +4,7 @@ cube = Cube()
 numturns = int(input('How many turns: '))
 turns = []
 
-for i in range (1,numturns + 1):
+for i in range (0,numturns):
     y = str(input('What is the turn: '))
     turns.append(y)
 
@@ -63,6 +63,7 @@ for y in range (0,numturns):
     elif turns[y] == 'bt':
         cube.bt()
     else:
-        print('error: move',y,'is not indexed')
+        print('error: move', turns[y] ,'is not indexed')
 
-print('test: ', cube.render())
+print("The cube's state is: ", end= '')
+cube.render()
