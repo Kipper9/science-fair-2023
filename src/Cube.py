@@ -37,14 +37,14 @@ class Cube:
     # does a turn to the right hand side clockwise
     def r(self):
        self.cubies[3], self.cubies[1], self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[8], self.cubies[9], self.cubies[14], self.cubies[15] = self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[1], self.cubies[3], self.cubies[14], self.cubies[8], self.cubies[15], self.cubies[9]
-    # # does a turn to the right hand side counterclockwise
-    # def rp(self):
+    # does a turn to the right hand side counterclockwise
+    def rp(self):
+       self.cubies[3], self.cubies[1], self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[8], self.cubies[9], self.cubies[14], self.cubies[15] = self.cubies[21], self.cubies[23], self.cubies[1], self.cubies[3], self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[9], self.cubies[15], self.cubies[8], self.cubies[14]
+    # does a 180 turn to the right han side of the cube
+    def rt(self):
+       self.cubies[3], self.cubies[1], self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[8], self.cubies[9], self.cubies[14], self.cubies[15] = self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[1], self.cubies[3], self.cubies[7], self.cubies[13], self.cubies[15], self.cubies[14], self.cubies[9], self.cubies[8]
 
-    # # does a 180 turn to the right han side of the cube
-    # def rt(self):
-    
-
-    # # does a turn to the left hand side clockwise
+   # does a turn to the left hand side clockwise
     # def l(self):
 
     # # does a turn to the left hand side counterclockwise

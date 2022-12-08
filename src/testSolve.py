@@ -29,7 +29,7 @@ while n == 0:
         cube.d()
     
     elif turn == 'dp':
-        cube.dp()
+        cube.d()
     
     elif turn == 'dt':
         cube.dt()
