@@ -35,8 +35,8 @@ class Cube:
        self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[16], self.cubies[17], self.cubies[18], self.cubies[19], self.cubies[21], self.cubies[20] = self.cubies[14], self.cubies[15], self.cubies[21], self.cubies[20], self.cubies[10], self.cubies[11], self.cubies[19], self.cubies[18], self.cubies[17], self.cubies[16], self.cubies[12], self.cubies[13]
 
     # does a turn to the right hand side clockwise
-    # def r(self):
-
+    def r(self):
+       self.cubies[3], self.cubies[1], self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[8], self.cubies[9], self.cubies[14], self.cubies[15] = self.cubies[7], self.cubies[13], self.cubies[17], self.cubies[19], self.cubies[21], self.cubies[23], self.cubies[1], self.cubies[3], self.cubies[14], self.cubies[8], self.cubies[15], self.cubies[9]
     # # does a turn to the right hand side counterclockwise
     # def rp(self):
 
