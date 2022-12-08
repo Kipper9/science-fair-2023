@@ -26,10 +26,10 @@ class Cube:
     
     # does a clockwise turn to the bottom layer
     def d(self):
-       self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[16], self.cubies[17], self.cubies[18], self .cubies[19], self.cubies[21], self.cubies[20] = self.cubies[21], self.cubies[22], self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[18], self.cubies[16], self.cubies[19], self.cubies[17], self.cubies[14]
+       self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[16], self.cubies[17], self.cubies[18], self.cubies[19], self.cubies[21], self.cubies[20] = self.cubies[21], self.cubies[20], self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[18], self.cubies[16], self.cubies[19], self.cubies[17], self.cubies[14], self.cubies[15]
     # does a counterclockwise turn to the bottom layer
     def dp(self):
-       self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[16], self.cubies[17], self.cubies[18], self.cubies[19], self.cubies[21], self.cubies[20] = self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[21], self.cubies[20], self.cubies[17], self.cubies[19], self.cubies[16], self.cubies[18], self.cubies[14]
+       self.cubies[10], self.cubies[11], self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[16], self.cubies[17], self.cubies[18], self.cubies[19], self.cubies[21], self.cubies[20] = self.cubies[12], self.cubies[13], self.cubies[14], self.cubies[15], self.cubies[21], self.cubies[20], self.cubies[17], self.cubies[19], self.cubies[16], self.cubies[18], self.cubies[10], self.cubies[11]
     # does a 180 turn  to the bottom layer
     # def dt(self):
 
