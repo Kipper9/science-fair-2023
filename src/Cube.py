@@ -47,19 +47,19 @@ class Cube:
    # does a turn to the left hand side clockwise
    def l(self):
       self.cubies[0], self.cubies[2], self.cubies[6], self.cubies[12], self.cubies[16], self.cubies[18], self.cubies[20], self.cubies[22], self.cubies[4], self.cubies[5], self.cubies[10], self.cubies[11] = self.cubies[20], self.cubies[22], self.cubies[0], self.cubies[2], self.cubies[6], self.cubies[12], self.cubies[16], self.cubies[18], self.cubies[10], self.cubies[4], self.cubies[11], self.cubies[5]
-   # # does a turn to the left hand side counterclockwise
-   # def lp(self):
-
-    # # does a 180 turn to the left hand side of the cube
+   # does a turn to the left hand side counterclockwise
+   def lp(self):
+      self.cubies[0], self.cubies[2], self.cubies[6], self.cubies[12], self.cubies[16], self.cubies[18], self.cubies[20], self.cubies[22], self.cubies[4], self.cubies[5], self.cubies[10], self.cubies[11] = self.cubies[6], self.cubies[12], self.cubies[16], self.cubies[18], self.cubies[20], self.cubies[22], self.cubies[0], self.cubies[2], self.cubies[5], self.cubies[11], self.cubies[4], self.cubies[10]
+   # does a 180 turn to the left hand side of the cube
     # def lt(self):
 
-    # # does a clockwise turn to the front of the cube
+   # does a clockwise turn to the front of the cube
     # def f(self):
 
-    # # does a counterclockwise turn to the front of the cube
+   # does a counterclockwise turn to the front of the cube
     # def fp(self):
 
-    # # does a 180 turn to the front side of the cube
+   # does a 180 turn to the front side of the cube
     # def ft(self):
 
    
