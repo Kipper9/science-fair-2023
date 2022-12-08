@@ -70,4 +70,3 @@ while n == 0:
 
     if choice == 'n':
         n = 1
-    
