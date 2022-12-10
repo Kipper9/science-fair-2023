@@ -65,7 +65,7 @@ while True:
     else:
         print('error: move', turn ,'is not indexed')
 
-    print ("The cube's state is:", end ='')
+    print ("The cube's state is:")
     cube.render()
 
     if cube.isSolved():
