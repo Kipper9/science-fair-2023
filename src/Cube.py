@@ -64,15 +64,15 @@ class Cube:
    def ft(self):
       self.cubies[2], self.cubies[3], self.cubies[8], self.cubies[14], self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[6], self.cubies[7], self.cubies[12], self.cubies[13] = self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[2], self.cubies[3], self.cubies[8], self.cubies[14], self.cubies[13], self.cubies[12], self.cubies[7], self.cubies[6]
 
-   
-    # # does a clockwise turn to the backside of the cube
-    # def b(self):
+
+   # does a clockwise turn to the backside of the cube
+   def b(self):
+      self.cubies[0], self.cubies[1], self.cubies[9], self.cubies[15], self.cubies[19], self.cubies[18], self.cubies[10], self.cubies[4], self.cubies[23], self.cubies[22], self.cubies[21], self.cubies[20] = self.cubies[9], self.cubies[15], self.cubies[19], self.cubies[18], self.cubies[10], self.cubies[4], self.cubies[0], self.cubies[1], self.cubies[21], self.cubies[23], self.cubies[20], self.cubies[22]
+   # does a counterclockwise turn to the backside of the cube
+   # def bp(self):
  
-    # # does a counterclockwise turn to the backside of the cube
-    # def bp(self):
- 
-    # # does a 180 turn to the back side of the cube
-    # def bt(self):
+   # does a 180 turn to the back side of the cube
+   # def bt(self):
 
    def isSolved(self):
       return (self.cubies[0] == self.cubies[1] == self.cubies[2] == self.cubies[3] and 
