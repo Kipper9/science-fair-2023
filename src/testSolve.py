@@ -58,13 +58,13 @@ while True:
     
     elif turn == 'bt':
         cube.bt()
+    
     elif turn == 'exit':
         break
+    
     else:
         print('error: move', turn ,'is not indexed')
 
-        
-    
     print ("The cube's state is:", end ='')
     cube.render()
 

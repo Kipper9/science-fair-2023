@@ -61,7 +61,8 @@ class Cube:
    def fp(self):
       self.cubies[2], self.cubies[3], self.cubies[8], self.cubies[14], self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[6], self.cubies[7], self.cubies[12], self.cubies[13] = self.cubies[8], self.cubies[14], self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[2], self.cubies[3], self.cubies[7], self.cubies[13], self.cubies[6], self.cubies[12]
    # does a 180 turn to the front side of the cube
-    # def ft(self):
+   def ft(self):
+      self.cubies[2], self.cubies[3], self.cubies[8], self.cubies[14], self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[6], self.cubies[7], self.cubies[12], self.cubies[13] = self.cubies[17], self.cubies[16], self.cubies[11], self.cubies[5], self.cubies[2], self.cubies[3], self.cubies[8], self.cubies[14], self.cubies[13], self.cubies[12], self.cubies[7], self.cubies[6]
 
    
     # # does a clockwise turn to the backside of the cube
