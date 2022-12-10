@@ -2,9 +2,7 @@ from Cube import Cube
 
 cube = Cube()
 
-n = 0
-
-while n == 0:
+while True:
     turn = str(input('What is your turn: '))
 
     if turn == 'f':
@@ -60,13 +58,16 @@ while n == 0:
     
     elif turn == 'bt':
         cube.bt()
+    elif turn == 'exit':
+        break
     else:
         print('error: move', turn ,'is not indexed')
+
+        
     
     print ("The cube's state is:", end ='')
     cube.render()
 
-    choice = str(input('Again (n/y): '))
-
-    if choice == 'n':
-        n = 1
+    if cube.isSolved():
+        print('The cube is solved!')
+        break

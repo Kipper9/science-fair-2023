@@ -73,6 +73,13 @@ class Cube:
     # # does a 180 turn to the back side of the cube
     # def bt(self):
 
+   def isSolved(self):
+      return (self.cubies[0] == self.cubies[1] == self.cubies[2] == self.cubies[3] and 
+         self.cubies[4] == self.cubies[5] == self.cubies[10] == self.cubies[11] and 
+         self.cubies[6] == self.cubies[7] == self.cubies[12] == self.cubies[13] and 
+         self.cubies[8] == self.cubies[9] == self.cubies[14] == self.cubies[15] and 
+         self.cubies[16] == self.cubies[17] == self.cubies[18] == self.cubies[19] and 
+         self.cubies[20] == self.cubies[21] == self.cubies[22] == self.cubies[23])
 
    def render(self):
       print(self.cubies)
