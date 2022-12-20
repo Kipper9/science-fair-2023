@@ -1,4 +1,6 @@
+import time
 def solve(cube):
+    start_time = time.perf_counter()
     visitedCubes = set()
     queue = [cube]
 
@@ -6,8 +8,10 @@ def solve(cube):
         currentCube = queue.pop(0)
 
         if currentCube.isSolved():
+            endTime = time.perf_counter()
             print('Solved!') 
             currentCube.render()
+            print (f'It took: {endTime - start_time: 0.4f}')
             break
 
         # loop over each of the moves
