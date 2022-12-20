@@ -1,6 +1,6 @@
 from Cube import Cube
 
-import Solver
+import slowSolver
 
 cube = Cube()
 
@@ -63,7 +63,7 @@ while True:
 
     elif turn == 'solve':
         cube.reset()
-        Solver.solve(cube)
+        slowSolver.solve(cube)
         break
     
     elif turn == 'exit':
