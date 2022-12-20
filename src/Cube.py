@@ -153,4 +153,4 @@ class Cube:
       self.cubies == other.cubies
 
    def __hash__(self):
-      return hash(self.cubies)
+      return hash(tuple(self.cubies))
