@@ -1,11 +1,11 @@
 from Cube import Cube
 
-import slowSolver
+import testSolver as Solver
 
 cube = Cube()
 
 while True:
-    turn = str(input('What is your turn: '))
+    turn = str(input('What function: '))
 
     if turn == 'f':
         cube = cube.f()
@@ -29,7 +29,7 @@ while True:
         cube = cube.d()
     
     elif turn == 'dp':
-        cube = cube.d()
+        cube = cube.dp()
     
     elif turn == 'dt':
         cube = cube.dt()
@@ -63,9 +63,15 @@ while True:
 
     elif turn == 'solve':
         cube.reset()
-        slowSolver.solve(cube)
+        Solver.solve(cube)
         break
-    
+
+    elif turn == 'scramble':
+        cube = cube.u()
+        cube = cube.rt()
+        cube = cube.fp()
+        cube = cube.dt()
+        cube = cube.f()
     elif turn == 'exit':
         break
     
