@@ -12,7 +12,7 @@ def solve(cube):
             endTime = time.perf_counter()
             print('Solved!') 
             currentCube.render()
-            print (f'It took: {endTime - start_time: 0.4f}')
+            print (f'It took: {endTime - start_time: 0.3f}')
             break
 
         # loop over each of the moves

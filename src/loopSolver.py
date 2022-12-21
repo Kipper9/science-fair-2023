@@ -66,12 +66,24 @@ while True:
         Solver.solve(cube)
         break
 
-    elif turn == 'scramble':
+    elif turn == 's1':
+        cube = cube.u()
+        cube = cube.rt()
+        cube = cube.fp()
+
+    elif turn == 's2':
         cube = cube.u()
         cube = cube.rt()
         cube = cube.fp()
         cube = cube.dt()
-        cube = cube.f()
+
+    elif turn == 's3':
+        cube = cube.u()
+        cube = cube.rt()
+        cube = cube.fp()
+        cube = cube.dt()
+        cube = cube.ft()
+
     elif turn == 'exit':
         break
     
