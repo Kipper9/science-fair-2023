@@ -1,4 +1,4 @@
-import Solver_3b as solver
+import solver_4 as solver
 from Cube import Cube
 
 cubes = [
