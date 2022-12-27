@@ -1,4 +1,4 @@
-import Solver_5 as solver
+import solver_4 as solver
 from Cube import Cube
 
 cubes = [
@@ -12,7 +12,7 @@ cubes = [
     Cube(['W', 'Y', 'Y', 'W', 'B', 'R', 'G', 'O', 'G', 'O', 'Y', 'W', 'R', 'G', 'Y', 'W', 'G', 'O', 'R', 'B', 'B', 'O', 'R', 'B']),
     # Solution: Ft, Ut, F, Ut, Rp
     # depth 6
-    Cube(['W', 'O', 'Y', 'B', 'B', 'R', 'G', 'O', 'W', 'Y', 'Y', 'W', 'R', 'B', 'O', 'G', 'G', 'Y', 'R', 'W', 'B', 'O', 'R', 'G'])
+    Cube(['W', 'Y', 'Y', 'W', 'G', 'O', 'B', 'R', 'B', 'R', 'Y', 'W', 'R', 'G', 'Y', 'W', 'G', 'O', 'R', 'B', 'B', 'O', 'O', 'G'])
     # Solution: Rt, Ft, Ut, F, Ut, Rp 
 ]
 for x, cube in enumerate(cubes):

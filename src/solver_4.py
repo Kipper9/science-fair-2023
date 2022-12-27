@@ -19,9 +19,9 @@ def solve(cube):
         # loop over each of the moves
         moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.ft(), currentCube.fp()]
         for newcube in moves:
-            if not newcube in visitedCubes.get(depth, set()) or not newcube in visitedCubes.get(depth - 1, set()) or not newcube in visitedCubes.get(depth - 2, set()):
+            if not newcube in visitedCubes.get(depth, set()) or not newcube in visitedCubes.get(depth - 1, set()) or not newcube in visitedCubes.get(depth + 1, set()):
                 queue.append((depth + 1, newcube))
             
             if not depth in visitedCubes:
                 visitedCubes[depth] = set()
-            visitedCubes[depth].add(currentCube)
+        visitedCubes[depth].add(currentCube)
