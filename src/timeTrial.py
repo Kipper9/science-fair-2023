@@ -12,8 +12,10 @@ cubes = [
     Cube(['W', 'Y', 'Y', 'W', 'B', 'R', 'G', 'O', 'G', 'O', 'Y', 'W', 'R', 'G', 'Y', 'W', 'G', 'O', 'R', 'B', 'B', 'O', 'R', 'B']),
     # Solution: Ft, Ut, F, Ut, Rp
     # depth 6
-    Cube(['W', 'Y', 'Y', 'W', 'G', 'O', 'B', 'R', 'B', 'R', 'Y', 'W', 'R', 'G', 'Y', 'W', 'G', 'O', 'R', 'B', 'B', 'O', 'O', 'G'])
-    # Solution: Rt, Ft, Ut, F, Ut, Rp 
+    # Cube(['W', 'W', 'W', 'B', 'G', 'G', 'R', 'R','Y', 'B', 'O', 'Y', 'G', 'O', 'G', 'W', 'R', 'Y', 'Y', 'R', 'B', 'B', 'O','O'])
+    # Solution: Ut, Ft, Ut, F, Ut, Rp 
+    # depth 9
+    Cube(['B', 'R', 'G', 'G', 'Y', 'R', 'W', 'O','Y', 'B', 'O', 'W', 'O', 'R', 'Y', 'O', 'B', 'G', 'W', 'B', 'G','Y','R', 'W',])
 ]
 for x, cube in enumerate(cubes):
     print(f'Solving depth {x + 3}')
