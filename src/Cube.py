@@ -21,7 +21,6 @@ class Cube:
       _cubies[0], _cubies[1], _cubies[2], _cubies[3], _cubies[4], _cubies[5], _cubies[6], _cubies[7], _cubies[8], _cubies[9], _cubies[22], _cubies[23] = _cubies[2], _cubies[0], _cubies[3], _cubies[1], _cubies[6], _cubies[7], _cubies[8], _cubies[9], _cubies[23], _cubies[22], _cubies[5], _cubies[4]
 
       return Cube(_cubies, self)
-
    # does a counterclockwise twist to top of the cube
    def up(self):
       _cubies = self.cubies.copy()
