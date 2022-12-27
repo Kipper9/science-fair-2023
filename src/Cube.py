@@ -9,7 +9,7 @@ class Cube:
          'Y','Y',
          'G','G',
          'G','G',
-         ], parent=None):
+         ], parent = None):
       self.cubies = cubies
       self.parent = parent
     
