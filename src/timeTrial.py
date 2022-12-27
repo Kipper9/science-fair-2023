@@ -15,7 +15,7 @@ cubes = [
     # Solution: Ft, Ut, F, Ut, Rp
     
     # depth 8
-    Cube(['W', 'W', 'W', 'B', 'G', 'G', 'R', 'R','Y', 'B', 'O', 'Y', 'G', 'O', 'G', 'W', 'R', 'Y', 'Y', 'R', 'B', 'B', 'O','O'])
+    #Cube(['W', 'W', 'W', 'B', 'G', 'G', 'R', 'R','Y', 'B', 'O', 'Y', 'G', 'O', 'G', 'W', 'R', 'Y', 'Y', 'R', 'B', 'B', 'O','O'])
     # Solution: Ut, Ft, Ut, F, Ut, Rp 
     
     # depth 9

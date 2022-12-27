@@ -1,6 +1,6 @@
 from Cube import Cube
 
-import Solver_3 as Solver
+import depthFirst as Solver
 
 cube = Cube()
 

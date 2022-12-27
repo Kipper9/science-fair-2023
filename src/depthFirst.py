@@ -3,10 +3,10 @@ import collections
 def solve(cube):
     start_time = time.perf_counter()
     visitedCubes = {}
-    queue = collections.deque(((0, cube)))
+    queue = collections.deque([(0, cube)])
 
     while queue:
-        depth, currentCube = queue.pop(0)
+        depth, currentCube = queue.popleft()
 
         # checks if the cube is solved
         if currentCube.isSolved():
@@ -22,6 +22,8 @@ def solve(cube):
         # loop over each of the moves
         moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.fp(), currentCube.ft()]
         for newcube in moves:
-            if not newcube in visitedCubes():
+            if not newcube in visitedCubes:
                 queue.appendleft((depth + 1, newcube))
-        visitedCubes.add(currentCube)
+            if not depth in visitedCubes:
+                visitedCubes[depth] = set()
+        visitedCubes[depth].add(currentCube)
