@@ -1,6 +1,6 @@
 from Cube import Cube
 
-import Solver_5 as Solver
+import Solver_6 as Solver
 
 cube = Cube()
 
