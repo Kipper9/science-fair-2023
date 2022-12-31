@@ -7,14 +7,14 @@ def solve(cube):
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
     
-    with open('cubeDepth.pkl','rb') as f:
+    with open('cubeDepth8.pkl','rb') as f:
         cubes = pickle.load(f)
     
-    if cube in cubes:
-        depthlimit = cubes[cube]
-
     while queue:
         depth, currentCube = queue.popleft()
+
+        if cube in cubes:
+            depthlimit = cubes[cube]
 
         # checks if the cube is solved
         if currentCube.isSolved():
@@ -30,7 +30,7 @@ def solve(cube):
         # loop over each of the moves
         moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.fp(), currentCube.ft()]
         for newcube in moves:
-            if newcube in visitedCubes.get(depth, set()) or not newcube in visitedCubes.get(depth - 1, set()) or not newcube in visitedCubes.get(depth + 1, set()):
+            if newcube in visitedCubes:
                 queue.appendleft((depth + 1, newcube))
             if not depth in visitedCubes:
                 visitedCubes[depth] = set()
