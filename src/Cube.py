@@ -1,6 +1,6 @@
 class Cube:
    # Array Layout: U1, U2, U3, U4, L1, L2, F1, F2, ....
-   def __init__(self, cubies=[
+   def __init__(self, cubies = [
          'W','W',
          'W','W',
          'R','R','B','B','O','O',
@@ -8,7 +8,7 @@ class Cube:
          'Y','Y',
          'Y','Y',
          'G','G',
-         'G','G',
+         'G','G'
          ], parent = None):
       self.cubies = cubies
       self.parent = parent
@@ -110,7 +110,6 @@ class Cube:
 
       return Cube(_cubies, self)
 
-
    # does a clockwise turn to the backside of the cube
    def b(self):
       _cubies = self.cubies.copy()
@@ -139,7 +138,6 @@ class Cube:
          self.cubies[20] == self.cubies[21] == self.cubies[22] == self.cubies[23])
 
    def render(self):
-
       if self.parent:
          self.parent.render()
          print("->")
@@ -149,7 +147,7 @@ class Cube:
       self.parent = None
 
    def __eq__(self, other):
-      self.cubies == other.cubies
+      return self.cubies == other.cubies
 
    def __hash__(self):
       return hash(tuple(self.cubies))
