@@ -1,10 +1,18 @@
 import time
 import collections
+import pickle
+
 def solve(cube):
-    depthlimit = 5
     start_time = time.perf_counter()
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
+    
+    with open('cubeDepth.pkl','rb') as f:
+        cubes = pickle.load(f)
+    
+    if cube in cubes:
+        depthlimit = cubes[cube]
+
     while queue:
         depth, currentCube = queue.popleft()
 
