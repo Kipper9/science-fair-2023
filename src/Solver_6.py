@@ -1,6 +1,7 @@
 import time
 import collections
 def solve(cube):
+    depthlimit = 5
     start_time = time.perf_counter()
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
@@ -15,7 +16,7 @@ def solve(cube):
             print (f'It took: {endTime - start_time: 0.3f}')
             break
         # makes sure the code doesn't go past the max depth
-        if depth == 11:
+        if depth == depthlimit:
             continue
 
         # loop over each of the moves

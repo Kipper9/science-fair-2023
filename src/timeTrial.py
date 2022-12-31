@@ -1,9 +1,9 @@
-import Solver_5 as solver
+import Solver_6 as solver
 from Cube import Cube
 
 cubes = [
     # depth 3
-    Cube(['W', 'Y', 'O', 'G', 'B', 'Y', 'G', 'R', 'W', 'O', 'R', 'W', 'O', 'B', 'Y', 'G', 'B', 'R', 'Y', 'W', 'G', 'O', 'R', 'B']),
+    # Cube(['W', 'Y', 'O', 'G', 'B', 'Y', 'G', 'R', 'W', 'O', 'R', 'W', 'O', 'B', 'Y', 'G', 'B', 'R', 'Y', 'W', 'G', 'O', 'R', 'B']),
     # Solution: F, Rt, Up
     
     # depth 4
