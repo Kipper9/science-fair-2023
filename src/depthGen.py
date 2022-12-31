@@ -7,7 +7,7 @@ visitedCubes = {}
 queue = collections.deque([(0, Cube())])
 depth = 0
 maxDepth = 0
-while depth < 12 and queue:
+while depth < 6 and queue:
   depth, currentCube = queue.popleft()
   if (depth > maxDepth):
       print('New depth:',maxDepth)
@@ -18,6 +18,7 @@ while depth < 12 and queue:
   for newcube in moves:
     if newcube not in visitedCubes:
       queue.append((depth + 1, newcube))
+  currentCube.parent = None
   visitedCubes[currentCube] = depth
 print('Solved!')
 print('')
