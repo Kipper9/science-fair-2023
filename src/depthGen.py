@@ -18,7 +18,7 @@ while depth < 6 and queue:
   for newcube in moves:
     if newcube not in visitedCubes:
       queue.append((depth + 1, newcube))
-  currentCube.parent = None
+  currentCube.reset
   visitedCubes[currentCube] = depth
 print('Solved!')
 print('')
