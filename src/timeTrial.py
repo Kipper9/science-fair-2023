@@ -1,7 +1,11 @@
-import Solver_4 as solver
+import Solver_7 as solver
 from Cube import Cube
 
 cubes = [
+    # depth 2
+    Cube(['R', 'R', 'W', 'W', 'W', 'O', 'G', 'G', 'R', 'Y', 'R', 'Y', 'B', 'B', 'W', 'O', 'O', 'O', 'Y', 'Y', 'G', 'G', 'B', 'B']),
+    # Solution: Ut, Fp
+    
     # depth 3
     Cube(['W', 'Y', 'O', 'G', 'B', 'Y', 'G', 'R', 'W', 'O', 'R', 'W', 'O', 'B', 'Y', 'G', 'B', 'R', 'Y', 'W', 'G', 'O', 'R', 'B']),
     # Solution: F, Rt, Up
@@ -20,7 +24,7 @@ cubes = [
     
     # depth 9
     Cube(['B', 'R', 'G', 'G', 'Y', 'R', 'W', 'O', 'Y', 'B', 'O', 'W', 'O', 'R', 'Y', 'O', 'B', 'G', 'W', 'B', 'G', 'Y', 'R', 'W'])
-    # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
+  # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
 ]
 for x, cube in enumerate(cubes):
     print(f'Solving scramble {x + 1}')
