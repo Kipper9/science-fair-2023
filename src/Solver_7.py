@@ -12,8 +12,11 @@ def solve(cube):
 
     with open('cubeDepth7.pkl','rb') as f:
         solvedCubes = pickle.load(f)
-
+    
+    endTime = time.perf_counter()
     print('Finished import')
+    print (f'It took: {endTime - start_time: 0.3f}')
+    start_time2 = time.perf_counter()
     while queue:
         depth, currentCube = queue.popleft()
         
@@ -24,10 +27,10 @@ def solve(cube):
 
         # checks if the cube is found in the presolved file
         if currentCube in solvedCubes:
-            endTime = time.perf_counter()
+            endTime2 = time.perf_counter()
             print('Solved, pickle') 
             currentCube.render()
-            print (f'It took: {endTime - start_time: 0.3f}')
+            print (f'It took: {endTime2 - start_time2: 0.3f}')
             break
         
         # loops over each of the moves
