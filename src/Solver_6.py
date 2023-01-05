@@ -7,7 +7,7 @@ def solve(cube):
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
     
-    with open('cubeDepth8.pkl','rb') as f:
+    with open('cubeDepth7.pkl','rb') as f:
         cubes = pickle.load(f)
     
     while queue:
