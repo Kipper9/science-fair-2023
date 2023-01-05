@@ -23,8 +23,11 @@ cubes = [
     # Solution: Ut, Ft, Ut, F, Ut, Rp 
     
     # depth 9
-    Cube(['B', 'R', 'G', 'G', 'Y', 'R', 'W', 'O', 'Y', 'B', 'O', 'W', 'O', 'R', 'Y', 'O', 'B', 'G', 'W', 'B', 'G', 'Y', 'R', 'W'])
-  # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
+    Cube(['B', 'R', 'G', 'G', 'Y', 'R', 'W', 'O', 'Y', 'B', 'O', 'W', 'O', 'R', 'Y', 'O', 'B', 'G', 'W', 'B', 'G', 'Y', 'R', 'W']),
+    # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
+
+    # depth 10
+    Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
 ]
 for x, cube in enumerate(cubes):
     print(f'Solving scramble {x + 1}')
