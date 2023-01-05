@@ -141,8 +141,22 @@ class Cube:
    def render(self):
       if self.parent:
          self.parent.render()
-         print("->")
+         print(self.move, "->")
       print(self.cubies)
+
+   def reverse (self):
+      reverseMoves = {
+         "U": "U'",
+         "U'": "U",
+         "U2": "U2",
+         "R": "R'",
+         "R'": "R",
+         "R2": "R2",
+         "F": "F'",
+         "F'": "F",
+         "F2": "F2"
+      }
+      return reverseMoves[self.move]
 
    def reset(self):
       self.parent = None
