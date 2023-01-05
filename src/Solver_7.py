@@ -1,21 +1,37 @@
 import time
 import collections
 import pickle
+from Cube import Cube
+solvedCubes = {}
 
-def solve(cube):
-    start_time = time.perf_counter()
-    visitedCubes = {}
-    queue = collections.deque([(0, cube)])
-    maxDepth = 0
-    
+def load():
+    global solvedCubes
     print('Importing')
-
-    with open('cubeDepth7.pkl','rb') as f:
+    start_time = time.perf_counter()
+    with open('cubeDepth7c.pkl','rb') as f:
         solvedCubes = pickle.load(f)
     
     endTime = time.perf_counter()
     print('Finished import')
     print (f'It took: {endTime - start_time: 0.3f}')
+
+def parentSwap(cubeA, cubeB):
+    cube = cubeB
+    parent = cubeA
+    while cube.parent:
+        cube = cube.parent
+        newCube = Cube(cube.cubies, parent, cube.reverse())
+        parent = newCube
+    
+    return parent
+        
+
+def solve(cube):
+    visitedCubes = {}
+    queue = collections.deque([(0, cube)])
+    maxDepth = 0
+    
+    
     start_time2 = time.perf_counter()
     while queue:
         depth, currentCube = queue.popleft()
@@ -30,6 +46,10 @@ def solve(cube):
             endTime2 = time.perf_counter()
             print('Solved, pickle') 
             currentCube.render()
+            print('--')
+            solvedCubes[currentCube].render()
+            print('++++++++')
+            parentSwap(currentCube, solvedCubes[currentCube]).render()
             print (f'It took: {endTime2 - start_time2: 0.3f}')
             break
         
