@@ -65,7 +65,9 @@ while True:
         cube.reset()
         Solver.solve(cube)
         break
-
+    elif turn == 'load':
+        Solver.load()
+        
     elif turn == 's1':
         cube = cube.u()
         cube = cube.rt()
