@@ -9,20 +9,21 @@ depth = 0
 maxDepth = 0
 while depth < 4 and queue:
   depth, currentCube = queue.popleft()
+  if currentCube in visitedCubes:
+    continue
   if (depth > maxDepth):
-      print('New depth:',maxDepth)
-      maxDepth = depth
+    print('New depth:',maxDepth)
+    maxDepth = depth
 
     # loop over each of the moves
   moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.ft(), currentCube.fp()]
   for newcube in moves:
     if newcube not in visitedCubes:
       queue.append((depth + 1, newcube))
-  if currentCube not in visitedCubes:
-    visitedCubes[currentCube] = currentCube
+  visitedCubes[currentCube] = currentCube
 print('Solved!')
 print('')
 print('Pickling')
-with open('cubeDepth7e.pkl','wb') as j:
+with open('cubeDepth.pkl','wb') as j:
     pickle.dump(visitedCubes,j)
 print('Done')
