@@ -7,7 +7,7 @@ visitedCubes = {}
 queue = collections.deque([(0, Cube())])
 depth = 0
 maxDepth = 0
-while depth < 4 and queue:
+while depth < 6 and queue:
   depth, currentCube = queue.popleft()
   if currentCube in visitedCubes:
     continue

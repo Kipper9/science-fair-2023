@@ -1,6 +1,6 @@
 from Cube import Cube
 
-import Solver_7 as Solver
+import CurrentSolver.Solver_7 as Solver
 
 cube = Cube()
 

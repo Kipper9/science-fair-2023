@@ -1,4 +1,4 @@
-import Solver_7 as solver
+import CurrentSolver.Solver_7 as solver
 from Cube import Cube
 
 cubes = [
@@ -27,7 +27,7 @@ cubes = [
     # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
 
     # depth 10
-    Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
+    #Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
 ]
 solver.load()
 

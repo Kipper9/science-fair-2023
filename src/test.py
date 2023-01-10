@@ -1,6 +1,6 @@
 import pickle
 from Cube import Cube
-with open('cubeDepth7d.pkl','rb') as f:
+with open('cubeDepth7e.pkl','rb') as f:
     cubes = pickle.load(f)
 
 cube = Cube(['R', 'R', 'W', 'W', 'W', 'O', 'G', 'G', 'R', 'Y', 'R', 'Y', 'B', 'B', 'W', 'O', 'O', 'O', 'Y', 'Y', 'G', 'G', 'B', 'B'])

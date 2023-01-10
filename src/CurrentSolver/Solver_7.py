@@ -38,7 +38,9 @@ def solve(cube):
             endTime = time.perf_counter()
             print('Solved, pickle')
             currentCube.render()
-            print("('_______________________')") 
+            print("('_______________________')")
+            solvedCubes[currentCube].render()
+            print("('_______________________')")
             parentSwap(currentCube, solvedCubes[currentCube]).render()
             print (f'It took: {endTime - start_time: 0.3f}')
             break
