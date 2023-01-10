@@ -8,7 +8,7 @@ def load():
     global solvedCubes
     print('Importing')
     start_time = time.perf_counter()
-    with open('cubeDepth7d.pkl','rb') as f:
+    with open('cubeDepth7e.pkl','rb') as f:
         solvedCubes = pickle.load(f)
     endTime = time.perf_counter()
     print('Finished import')
@@ -36,7 +36,9 @@ def solve(cube):
         # checks if the cube is found in the presolved file
         if currentCube in solvedCubes:
             endTime = time.perf_counter()
-            print('Solved, pickle') 
+            print('Solved, pickle')
+            currentCube.render()
+            print("('_______________________')") 
             parentSwap(currentCube, solvedCubes[currentCube]).render()
             print (f'It took: {endTime - start_time: 0.3f}')
             break
@@ -44,7 +46,7 @@ def solve(cube):
         # loops over each of the moves
         moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(), currentCube.bp()]
         for newcube in moves:
-            if not newcube in visitedCubes.get(depth, set()) or not newcube in visitedCubes.get(depth - 1, set()) or not newcube in visitedCubes.get(depth + 1, set()):
+            if not newcube in visitedCubes:
                 queue.append((depth + 1, newcube))
             if not depth in visitedCubes:
                 visitedCubes[depth] = set()
