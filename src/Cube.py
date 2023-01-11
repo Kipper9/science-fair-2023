@@ -173,6 +173,15 @@ class Cube:
          "F": "F'",
          "F'": "F",
          "F2": "F2",
+         "D": "D'",
+         "D'": "D",
+         "D2": "D2",
+         "L": "L'",
+         "L'": "L",
+         "L2": "L2",
+         "B": "B'",
+         "B'": "B",
+         "B2": "B2",
          None: None
       }
       return reverseMoves[self.move]
