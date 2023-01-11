@@ -4,6 +4,8 @@ import Solver_7 as Solver
 
 cube = Cube()
 
+Solver.load()
+
 while True:
     turn = str(input('What function: '))
 
