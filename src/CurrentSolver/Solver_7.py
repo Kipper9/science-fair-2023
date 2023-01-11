@@ -28,11 +28,9 @@ def parentSwap(cubeA, cubeB):
 def solve(cube):
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
-    
     start_time = time.perf_counter()
     while queue:
         depth, currentCube = queue.popleft()
-
         # checks if the cube is found in the presolved file
         if currentCube in solvedCubes:
             endTime = time.perf_counter()
@@ -44,7 +42,6 @@ def solve(cube):
             parentSwap(currentCube, solvedCubes[currentCube]).render()
             print (f'It took: {endTime - start_time: 0.3f}')
             break
-        
         # loops over each of the moves
         moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(), currentCube.bp()]
         for newcube in moves:
