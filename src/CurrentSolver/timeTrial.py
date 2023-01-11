@@ -1,4 +1,4 @@
-import CurrentSolver.Solver_7 as solver
+import Solver_7 as solver
 from Cube import Cube
 
 cubes = [
