@@ -16,7 +16,8 @@ while depth < 6 and queue:
     maxDepth = depth
 
     # loop over each of the moves
-  moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.ft(), currentCube.fp()]
+  moves = [currentCube.u(), currentCube.up(), currentCube.ut(), currentCube.r(), currentCube.rp(), currentCube.rt(), currentCube.f(), currentCube.ft(), currentCube.fp(),
+  currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(), currentCube.bp()]
   for newcube in moves:
     if newcube not in visitedCubes:
       queue.append((depth + 1, newcube))
