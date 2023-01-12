@@ -8,7 +8,7 @@ def load():
     global solvedCubes
     print('Importing')
     start_time = time.perf_counter()
-    with open('cubeDepth7e.pkl','rb') as f:
+    with open('cubeDepth.pkl','rb') as f:
         solvedCubes = pickle.load(f)
     endTime = time.perf_counter()
     print('Finished import')
