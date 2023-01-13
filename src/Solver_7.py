@@ -34,16 +34,13 @@ def solve(cube):
         # checks if the cube is found in the presolved file
         if currentCube in solvedCubes:
             endTime = time.perf_counter()
-            print('Solved, pickle')
-            currentCube.render()
-            print("('_______________________')")
-            solvedCubes[currentCube].render()
-            print("('_______________________')")
+            print('Solved')
             parentSwap(currentCube, solvedCubes[currentCube]).render()
             print (f'It took: {endTime - start_time: 0.3f}')
             break
         # loops over each of the moves
-        moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(), currentCube.bp()]
+        moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(),
+        currentCube.bp()]
         for newcube in moves:
             if not newcube in visitedCubes:
                 queue.append((depth + 1, newcube))
