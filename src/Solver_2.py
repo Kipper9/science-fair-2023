@@ -20,4 +20,4 @@ def solve(cube):
         for newcube in moves:
             if not newcube in visitedCubes:
                 queue.append(newcube)
-            visitedCubes.add(currentCube)
+        visitedCubes.add(currentCube)
