@@ -17,17 +17,13 @@ cubes = [
     # depth 5
     Cube(['W', 'Y', 'Y', 'W', 'B', 'R', 'G', 'O', 'G', 'O', 'Y', 'W', 'R', 'G', 'Y', 'W', 'G', 'O', 'R', 'B', 'B', 'O', 'R', 'B']),
     # Solution: Ft, Ut, F, Ut, Rp
-
-    # depth 8
-    Cube(['W', 'W', 'W', 'B', 'G', 'G', 'R', 'R', 'Y', 'B', 'O', 'Y', 'G', 'O', 'G', 'W', 'R', 'Y', 'Y', 'R', 'B', 'B', 'O', 'O']),
-    # Solution: Ut, Ft, Ut, F, Ut, Rp 
     
     # depth 9
     Cube(['B', 'R', 'G', 'G', 'Y', 'R', 'W', 'O', 'Y', 'B', 'O', 'W', 'O', 'R', 'Y', 'O', 'B', 'G', 'W', 'B', 'G', 'Y', 'R', 'W']),
     # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
 
     # depth 10
-    #Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
+    Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
 ]
 solver.load()
 
