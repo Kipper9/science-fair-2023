@@ -168,9 +168,9 @@ class Cube:
          self.parent.render()
          print("->")
       if self.move:
-         print(self.move,': ',self.cubies)
+         print(self.move,': ',self.cubiesStr())
       else:
-         print(self.cubies)
+         print(self.cubiesStr())
 
    def reverse (self):
       reverseMoves = {
@@ -210,3 +210,6 @@ class Cube:
       if self.parent:
          moves += self.parent.moves()
       return moves + " " + (self.move or '')
+
+   def cubiesStr (self):
+      return ", ".join(item for item in self.cubies)
