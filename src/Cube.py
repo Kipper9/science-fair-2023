@@ -156,11 +156,20 @@ class Cube:
          self.cubies[16] == self.cubies[17] == self.cubies[18] == self.cubies[19] and 
          self.cubies[20] == self.cubies[21] == self.cubies[22] == self.cubies[23])
 
+   def render2(self):
+      if self.parent:
+         self.parent.render2()
+         print('->')
+      if self.move:
+         print(self.move)
+   
    def render(self):
       if self.parent:
          self.parent.render()
          print("->")
-      print(self.move, ": ", self.cubies)
+      if self.move:
+         print(self.move)
+      print(self.cubies)
 
    def reverse (self):
       reverseMoves = {
