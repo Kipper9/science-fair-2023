@@ -12,7 +12,7 @@ def load():
         solvedCubes = pickle.load(f)
     endTime = time.perf_counter()
     print('Finished import')
-    print (f'It took: {endTime - start_time: 0.3f}')
+    print (f'Time: {endTime - start_time: 0.3f}s')
 
 def parentSwap(cubeA, cubeB):
     nextMove = cubeB.move
@@ -36,8 +36,9 @@ def solve(cube):
         # checks if the cube is found in the presolved file
         if currentCube in solvedCubes:
             endTime = time.perf_counter()
-            print('Solution:', parentSwap(currentCube, solvedCubes[currentCube]).moves())
-            print (f'Time:      {endTime - start_time: 0.9f} s')
+            solution = parentSwap(currentCube, solvedCubes[currentCube])
+            print('Solution: ', solution.moves()," (", solution.moves().count(" ") - 1, " moves)", sep = '')
+            print (f'Time:      {endTime - start_time: 0.9f}s')
             break
         # loops over each of the moves
         moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(),
