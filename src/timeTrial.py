@@ -23,7 +23,7 @@ cubes = [
     # Solution: Rp, Ut, Rp, Fp, Rt, Fp, U, Ft, Rt
 
     # depth 10
-    # Cube(['O', 'B', 'R', 'R', 'W', 'G', 'Y', 'W', 'G', 'O', 'R', 'Y', 'R', 'O', 'W', 'Y', 'B', 'G', 'Y', 'B', 'G', 'O', 'B', 'W'])
+    Cube(['O', 'W', 'B', 'Y', 'B', 'R', 'Y', 'R', 'G', 'O', 'G', 'B', 'O', 'B', 'R', 'R', 'Y', 'Y', 'W', 'W', 'G', 'O', 'G', 'W'])
 ]
 solver.load()
 print('')
