@@ -36,8 +36,8 @@ def solve(cube):
             endTime = time.perf_counter()
             print('Solved')
             cube.render()
-            parentSwap(currentCube, solvedCubes[currentCube]).render2()
-            print (f'It took: {endTime - start_time: 0.3f}')
+            print('Solution:', parentSwap(currentCube, solvedCubes[currentCube]).moves())
+            print (f'It took: {endTime - start_time: 0.9f}')
             break
         # loops over each of the moves
         moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(),
