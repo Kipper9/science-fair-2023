@@ -204,3 +204,9 @@ class Cube:
 
    def __hash__(self):
       return hash(tuple(self.cubies))
+   
+   def moves(self, move = ''):
+      moves = ""
+      if self.parent:
+         moves += self.parent.moves()
+      return moves + " " + (self.move or '')
