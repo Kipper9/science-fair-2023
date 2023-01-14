@@ -15,7 +15,7 @@ def load():
     print (f'It took: {endTime - start_time: 0.3f}')
 
 def parentSwap(cubeA, cubeB):
-    nextMove = None
+    nextMove = cubeB.move
     parent = cubeA
     cube = cubeB.parent
     while cube:
@@ -35,7 +35,8 @@ def solve(cube):
         if currentCube in solvedCubes:
             endTime = time.perf_counter()
             print('Solved')
-            parentSwap(currentCube, solvedCubes[currentCube]).render()
+            cube.render()
+            parentSwap(currentCube, solvedCubes[currentCube]).render2()
             print (f'It took: {endTime - start_time: 0.3f}')
             break
         # loops over each of the moves
