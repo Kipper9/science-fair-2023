@@ -34,8 +34,9 @@ def solve(cube):
         if currentCube in solvedCubes:
             return parentSwap(currentCube, solvedCubes[currentCube])
         # loops over each of the moves
-        moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), currentCube.l(), currentCube.lp(), currentCube.lt(), currentCube.b(), currentCube.bt(),
-        currentCube.bp()]
+        moves = [currentCube.d(), currentCube.dp(), currentCube.dt(), 
+        currentCube.l(), currentCube.lp(), currentCube.lt(), 
+        currentCube.b(), currentCube.bt(),currentCube.bp()]
         for newcube in moves:
             if not newcube in visitedCubes:
                 queue.append((depth + 1, newcube))
