@@ -1,4 +1,4 @@
-import Solver_2 as solver
+import Solver_7 as solver
 import time
 from Cube import Cube
 
@@ -30,7 +30,7 @@ cubes = [
 solver.load()
 print('')
 
-for x, cube in enumerate(cubes):
+for cube in cubes:
     print('Solving:    ', end='')
     cube.render()
     start_time = time.perf_counter()
