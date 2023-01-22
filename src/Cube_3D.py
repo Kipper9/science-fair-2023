@@ -1,5 +1,7 @@
+from Cube import Cube
 from vpython import *
 from time import *
+cube = Cube()
 
 floor = box(pos = vector(0,-5,0), color = color.yellow, size = vector(10,.1,10))
 ceiling = box(pos = vector(0,5,0), color = color.white, size = vector(10,.1,10))
@@ -7,8 +9,6 @@ backWall = box(pos = vector(0,0,-5), color = color.green, size = vector(10,10,.1
 leftWall = box(pos = vector(-5,0,0), color = color.red, size = vector(.1,10,10))
 rightWall = box(pos = vector(5,0,0), color = color.orange, size = vector(.1,10,10))
 frontWall = box(pos = vector(0,0,5), color = color.blue, size = vector(10,10,.1))
-global cubie1
-
 cubie1 = compound([floor, ceiling, backWall, leftWall, rightWall, frontWall], pos = vector(5.05,5.05,5.05))
 cubie2 = cubie1.clone(pos = vector(-5.05,5.05,5.05))
 cubie3 = cubie1.clone(pos = vector(5.05,-5.05,5.05))
@@ -36,6 +36,57 @@ def move (move):
     moveinfo = moves[move]
     for i in range(0,90):
         for j in moveinfo["cubes"]:
-            cube[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
+            cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
         sleep(0.001)
     cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
+
+while True:
+    turn = str(input('What function: '))
+
+    if turn == 'f':
+        cube = cube.f()
+        move('F')
+    
+    elif turn == 'fp':
+        cube = cube.fp()
+        move("F'")
+    
+    elif turn == 'ft':
+        cube = cube.ft()
+        move('F2')
+    
+    elif turn == 'u':
+        cube = cube.u()
+        move('U')
+    
+    elif turn == 'up':
+        cube = cube.up()
+        move("U'")
+   
+    elif turn == 'ut':
+        cube = cube.ut()
+        move('U2')
+
+    elif turn == 'r':
+        cube = cube.r()
+        move('R')
+    
+    elif turn == 'rp':
+        cube = cube.rp()
+        move("R'")
+    
+    elif turn == 'rt':
+        cube = cube.rt()
+        move('R2')
+
+    elif turn == 'exit':
+        break
+    
+    else:
+        print('Error: move', turn ,'is not indexed')
+
+    print ("The cube's state is:")
+    cube.render()
+
+    if cube.isSolved():
+        print('The cube is solved!')
