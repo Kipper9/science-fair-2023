@@ -30,6 +30,7 @@ moves = {
     'U': { "cubes": [0, 1, 7, 4], "rotation": -1, "vector": (0, 1, 0), "swaps": [7,0,4,1]},
     "U'": { "cubes": [0, 1, 7, 4], "rotation": 1, "vector": (0, 1, 0), "swaps": [1,4,0,7]},
     'U2': { "cubes": [0, 1, 7, 4], "rotation": 2, "vector": (0, 1, 0), "swaps": [4,7,1,0]},
+    
 
 }
 
@@ -38,10 +39,15 @@ def move (move):
     for i in range(0,90):
         for j in moveinfo["cubes"]:
             cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
-        sleep(0.001)
+        sleep(0.003)
     cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
 
 solver.load()
+
+def solutionActivate(moves):
+    for m in moves.split():
+        move(m)
+        sleep(0.8)
 
 while True:
     turn = str(input('What function: '))
@@ -87,8 +93,9 @@ while True:
     
     elif turn == 'solve':
         cube.reset()
-        solution = solver.solve(cube)
-        print('Solution:', solution.moves())
+        solution = solver.solve(cube).moves()
+        print('Solution:', solution)
+        solutionActivate(solution)
     else:
         print('Error: move', turn ,'is not indexed')
 
