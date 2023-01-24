@@ -198,7 +198,7 @@ class Cube:
 
    def reset(self):
       self.parent = None
-      self.moves = None
+      self.moves = ''
 
    def __eq__(self, other):
       return self.cubies == other.cubies
