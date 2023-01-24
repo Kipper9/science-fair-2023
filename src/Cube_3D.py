@@ -30,8 +30,15 @@ moves = {
     'U': { "cubes": [0, 1, 7, 4], "rotation": -1, "vector": (0, 1, 0), "swaps": [7,0,4,1]},
     "U'": { "cubes": [0, 1, 7, 4], "rotation": 1, "vector": (0, 1, 0), "swaps": [1,4,0,7]},
     'U2': { "cubes": [0, 1, 7, 4], "rotation": 2, "vector": (0, 1, 0), "swaps": [4,7,1,0]},
-    
-
+    'B': { "cubes": [4, 7, 5, 6], "rotation": 1, "vector": (0, 0, 1), "swaps": [7,5,6,4]},
+    "B'": { "cubes": [4, 7, 5, 6], "rotation": -1, "vector": (0, 0, 1), "swaps": [6,4,7,5]},
+    'B2': { "cubes": [4, 7, 5, 6], "rotation": 2, "vector": (0, 0, 1), "swaps": [5,6,4,7]},
+    'L': { "cubes": [4, 1, 3, 6], "rotation": 1, "vector": (1, 0, 0), "swaps": [6,4,1,3]},
+    "L'": { "cubes": [4, 1, 3, 6], "rotation": -1, "vector": (1, 0, 0), "swaps": [1,3,6,4]},
+    'L2': { "cubes": [4, 1, 3, 6], "rotation": 2, "vector": (1, 0, 0), "swaps": [3,6,4,1]},
+    'D': { "cubes": [3, 2, 6, 5], "rotation": 1, "vector": (0, 1, 0), "swaps": [6,3,5,2]},
+    "D'": { "cubes": [3, 2, 6, 5], "rotation": -1, "vector": (0, 1, 0), "swaps": [2,5,3,6]},
+    'D2': { "cubes": [3, 2, 6, 5], "rotation": 2, "vector": (0, 1, 0), "swaps": [5,6,2,3]}
 }
 
 def move (move):
@@ -64,6 +71,18 @@ while True:
         cube = cube.ft()
         move('F2')
     
+    elif turn == 'b':
+        cube = cube.b()
+        move('B')
+
+    elif turn == 'bp':
+        cube.bp()
+        move("B'")
+    
+    elif turn == 'bt':
+        cube = cube.bt()
+        move('B2')
+
     elif turn == 'u':
         cube = cube.u()
         move('U')
@@ -75,6 +94,18 @@ while True:
     elif turn == 'ut':
         cube = cube.ut()
         move('U2')
+    
+    elif turn == 'd':
+        cube = cube.d()
+        move('D')
+    
+    elif turn == 'dp':
+        cube = cube.dp()
+        move("D'")
+    
+    elif turn == 'dt':
+        cube = cube.dt()
+        move('D2')
 
     elif turn == 'r':
         cube = cube.r()
@@ -88,14 +119,29 @@ while True:
         cube = cube.rt()
         move('R2')
 
+    elif turn == 'l':
+        cube = cube.l()
+        move('L')
+    
+    elif turn == 'lp':
+        cube = cube.lp()
+        move("L'")
+    
+    elif turn == 'lt':
+        cube = cube.lt()
+        move('L2')
+
     elif turn == 'exit':
         break
     
     elif turn == 'solve':
         cube.reset()
-        solution = solver.solve(cube).moves()
-        print('Solution:', solution)
-        solutionActivate(solution)
+        solution = solver.solve(cube)
+        print('Solution:', solution.moves())
+        solutionActivate(solution.moves())
+        solution.reset()
+        cube = solution
+        
     else:
         print('Error: move', turn ,'is not indexed')
 
@@ -104,3 +150,4 @@ while True:
 
     if cube.isSolved():
         print('The cube is solved!')
+        cube.reset()
