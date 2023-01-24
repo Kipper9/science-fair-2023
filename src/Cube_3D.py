@@ -1,6 +1,7 @@
 from Cube import Cube
 from vpython import *
 from time import *
+import Solver_7 as solver
 cube = Cube()
 
 floor = box(pos = vector(0,-5,0), color = color.yellow, size = vector(10,.1,10))
@@ -39,6 +40,8 @@ def move (move):
             cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
         sleep(0.001)
     cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
+
+solver.load()
 
 while True:
     turn = str(input('What function: '))
@@ -82,6 +85,10 @@ while True:
     elif turn == 'exit':
         break
     
+    elif turn == 'solve':
+        cube.reset()
+        solution = solver.solve(cube)
+        print('Solution:', solution.moves())
     else:
         print('Error: move', turn ,'is not indexed')
 
