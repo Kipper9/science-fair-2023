@@ -65,7 +65,8 @@ while True:
 
     elif turn == 'solve':
         cube.reset()
-        Solver.solve(cube)
+        solution = Solver.solve(cube)
+        print('Solution', solution.moves())
         break
     elif turn == 'load':
         Solver.load()
