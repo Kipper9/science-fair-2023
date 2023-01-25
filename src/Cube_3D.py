@@ -150,4 +150,3 @@ while True:
 
     if cube.isSolved():
         print('The cube is solved!')
-        cube.reset()
