@@ -2,24 +2,9 @@ from Cube import Cube
 from vpython import *
 from time import *
 import Solver_7 as solver
+
+solver.load()
 cube = Cube()
-
-
-floor = box(pos = vector(0,-5,0), color = color.yellow, size = vector(10,.1,10))
-ceiling = box(pos = vector(0,5,0), color = color.white, size = vector(10,.1,10))
-backWall = box(pos = vector(0,0,-5), color = color.green, size = vector(10,10,.1))
-leftWall = box(pos = vector(-5,0,0), color = color.red, size = vector(.1,10,10))
-rightWall = box(pos = vector(5,0,0), color = color.orange, size = vector(.1,10,10))
-frontWall = box(pos = vector(0,0,5), color = color.blue, size = vector(10,10,.1))
-cubie1 = compound([floor, ceiling, backWall, leftWall, rightWall, frontWall], pos = vector(5.05,5.05,5.05))
-cubie2 = cubie1.clone(pos = vector(-5.05,5.05,5.05))
-cubie3 = cubie1.clone(pos = vector(5.05,-5.05,5.05))
-cubie4 = cubie1.clone(pos = vector(-5.05,-5.05,5.05))
-cubie5 = cubie1.clone(pos = vector(-5.05,5.05,-5.05))
-cubie6 = cubie1.clone(pos = vector(5.05,-5.05,-5.05))
-cubie7 = cubie1.clone(pos = vector(-5.05,-5.05,-5.05))
-cubie8 = cubie1.clone(pos = vector(5.05,5.05,-5.05))
-cube2 = [cubie1, cubie2, cubie3, cubie4, cubie5, cubie6, cubie7, cubie8]
 
 moves = {
     'R': { "cubes": [0, 2, 7, 5], "rotation": -1, "vector": (1, 0, 0), "swaps": [2,5,0,7], "func": "r" },
@@ -52,11 +37,39 @@ def moveBtn(btn):
 
 def solveBtn(btn):
     global cube
+    cube.reset()
     solution = solver.solve(cube)
     print('Solution:', solution.moves())
     solutionActivate(solution.moves())
     solution.reset()
-    cube = solution
+
+def move(move):
+    global cube
+    moveinfo = moves[move]
+    for i in range(0,90):
+        for j in moveinfo["cubes"]:
+            cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
+        sleep(0.0001)
+    cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
+    cube = getattr(cube, moveinfo["func"])()
+    cube.render()
+
+
+floor = box(pos = vector(0,-5,0), color = color.yellow, size = vector(10,.1,10))
+ceiling = box(pos = vector(0,5,0), color = color.white, size = vector(10,.1,10))
+backWall = box(pos = vector(0,0,-5), color = color.green, size = vector(10,10,.1))
+leftWall = box(pos = vector(-5,0,0), color = color.red, size = vector(.1,10,10))
+rightWall = box(pos = vector(5,0,0), color = color.orange, size = vector(.1,10,10))
+frontWall = box(pos = vector(0,0,5), color = color.blue, size = vector(10,10,.1))
+cubie1 = compound([floor, ceiling, backWall, leftWall, rightWall, frontWall], pos = vector(5.05,5.05,5.05))
+cubie2 = cubie1.clone(pos = vector(-5.05,5.05,5.05))
+cubie3 = cubie1.clone(pos = vector(5.05,-5.05,5.05))
+cubie4 = cubie1.clone(pos = vector(-5.05,-5.05,5.05))
+cubie5 = cubie1.clone(pos = vector(-5.05,5.05,-5.05))
+cubie6 = cubie1.clone(pos = vector(5.05,-5.05,-5.05))
+cubie7 = cubie1.clone(pos = vector(-5.05,-5.05,-5.05))
+cubie8 = cubie1.clone(pos = vector(5.05,5.05,-5.05))
+cube2 = [cubie1, cubie2, cubie3, cubie4, cubie5, cubie6, cubie7, cubie8]
 
 for label in moves.keys():
     button(text = label, bind = moveBtn)
@@ -64,18 +77,5 @@ scene.append_to_caption("\n\n")
 
 button(text = "Solve", bind = solveBtn)
 
-def move(move):
-    moveinfo = moves[move]
-    for i in range(0,90):
-        for j in moveinfo["cubes"]:
-            cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
-        sleep(0.000001)
-    cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
-    getattr(cube, moveinfo["func"])
-    cube.render()
-solver.load()
-
-
-
 while True:
-    pass
+    turn = str(input('What function: '))
