@@ -53,7 +53,6 @@ def moveBtn(btn):
 def solveBtn(btn):
     global cube
     solution = solver.solve(cube)
-    print('r')
     print('Solution:', solution.moves())
     solutionActivate(solution.moves())
     solution.reset()
