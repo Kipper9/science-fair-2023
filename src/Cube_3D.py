@@ -30,7 +30,7 @@ moves = {
 def solutionActivate(moves):
     for m in moves.split():
         move(m)
-        sleep(0.5)
+        sleep(0.2)
     
 def moveBtn(btn):
     move(btn.text)
@@ -43,16 +43,24 @@ def solveBtn(btn):
     solutionActivate(solution.moves())
     solution.reset()
 
+def scrambleBtn(btn):
+    solutionActivate("L F2 D' B L2")
+
 def move(move):
     global cube
     moveinfo = moves[move]
     for i in range(0,90):
         for j in moveinfo["cubes"]:
             cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
-        sleep(0.0001)
+        sleep(0.00001)
     cube2[moveinfo["cubes"][0]], cube2[moveinfo["cubes"][1]] ,cube2[moveinfo["cubes"][2]], cube2[moveinfo["cubes"][3]] = cube2[moveinfo["swaps"][0]], cube2[moveinfo["swaps"][1]], cube2[moveinfo["swaps"][2]], cube2[moveinfo["swaps"][3]]
     cube = getattr(cube, moveinfo["func"])()
     cube.render()
+
+scene.width = 1500
+scene.height = 675
+scene.title = "Cube Solver"
+scene.append_to_title("\n\n")
 
 
 floor = box(pos = vector(0,-5,0), color = color.yellow, size = vector(10,.1,10))
@@ -72,10 +80,11 @@ cubie8 = cubie1.clone(pos = vector(5.05,5.05,-5.05))
 cube2 = [cubie1, cubie2, cubie3, cubie4, cubie5, cubie6, cubie7, cubie8]
 
 for label in moves.keys():
-    button(text = label, bind = moveBtn)
-scene.append_to_caption("\n\n")
-
+    button(text = label, bind = moveBtn, pos = scene.title_anchor)
+# scene.append_to_caption("\n\n")
+scene.append_to_caption("\n")
 button(text = "Solve", bind = solveBtn)
+button(text = "Scramble", bind = scrambleBtn)
 
 while True:
-    turn = str(input('What function: '))
+    pass
