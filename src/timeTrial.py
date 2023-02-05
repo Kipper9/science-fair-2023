@@ -1,4 +1,4 @@
-import Solver_7 as solver
+import Solver_3 as solver
 import time
 from Cube import Cube
 
