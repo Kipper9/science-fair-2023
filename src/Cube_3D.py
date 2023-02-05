@@ -1,7 +1,7 @@
 from Cube import Cube
 from vpython import *
 from time import *
-import Solver_7 as solver
+import Solver_3 as solver
 
 solver.load()
 cube = Cube()
@@ -44,7 +44,7 @@ def solveBtn(btn):
     solution.reset()
 
 def scrambleBtn(btn):
-    solutionActivate("L F2 D' B L2")
+    solutionActivate("L F2 D' B L2 F'")
 
 def move(move):
     global cube
