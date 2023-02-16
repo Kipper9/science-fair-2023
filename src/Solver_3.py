@@ -26,6 +26,7 @@ def parentSwap(cubeA, cubeB):
     return parent
 
 def solve(cube):
+    cube.reset()
     visitedCubes = {}
     queue = collections.deque([(0, cube)])
     while queue:
