@@ -34,10 +34,11 @@ def solutionActivate(moves):
     
 def moveBtn(btn):
     move(btn.text)
+    solution = solver.solve(cube)
+    print('Solution:', solution.moves())
 
 def solveBtn(btn):
     global cube
-    cube.reset()
     solution = solver.solve(cube)
     print('Solution:', solution.moves())
     solutionActivate(solution.moves())
