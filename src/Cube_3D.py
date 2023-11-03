@@ -45,7 +45,12 @@ def solveBtn(btn):
     solution.reset()
 
 def scrambleBtn(btn):
-    solutionActivate("L F2 D' B L2 F'")
+    global cube
+    moveinfo = moves["F"]
+    for i in range(0,45):
+        for j in moveinfo["cubes"]:
+            cube2[j].rotate(angle = radians(moveinfo['rotation']), axis = vector(*moveinfo["vector"]), origin = vector(0,0,0))
+        sleep(0.00001)
 
 def move(move):
     global cube
@@ -59,7 +64,7 @@ def move(move):
     cube.render()
 
 scene.width = 1500
-scene.height = 675
+scene.height = 600
 scene.title = "Cube Solver"
 scene.append_to_title("\n\n")
 
@@ -79,9 +84,12 @@ cubie6 = cubie1.clone(pos = vector(5.05,-5.05,-5.05))
 cubie7 = cubie1.clone(pos = vector(-5.05,-5.05,-5.05))
 cubie8 = cubie1.clone(pos = vector(5.05,5.05,-5.05))
 cube2 = [cubie1, cubie2, cubie3, cubie4, cubie5, cubie6, cubie7, cubie8]
-
+x = 0
 for label in moves.keys():
+    if x % 6 == 0:
+        scene.append_to_title("\n")
     button(text = label, bind = moveBtn, pos = scene.title_anchor)
+    x += 1
 # scene.append_to_caption("\n\n")
 scene.append_to_caption("\n")
 button(text = "Solve", bind = solveBtn)
